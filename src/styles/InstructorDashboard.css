@@ -1,0 +1,76 @@
+.dashboard-card {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.1) !important;
+}
+
+.icon-container {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.dashboard-card:hover .icon-container {
+    transform: scale(1.1);
+}
+
+.btn {
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary {
+    background-color: #4299e1;
+    border-color: #4299e1;
+}
+
+.btn-primary:hover {
+    background-color: #3182ce;
+    border-color: #3182ce;
+}
+
+.btn-success {
+    background-color: #48bb78;
+    border-color: #48bb78;
+}
+
+.btn-success:hover {
+    background-color: #38a169;
+    border-color: #38a169;
+}
+
+.btn-info {
+    background-color: #4fd1c5;
+    border-color: #4fd1c5;
+    color: white;
+}
+
+.btn-info:hover {
+    background-color: #38b2ac;
+    border-color: #38b2ac;
+    color: white;
+}
+
+.display-5 {
+    font-weight: 700;
+    background: linear-gradient(120deg, #4299e1, #667eea);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+}
+
+.lead {
+    font-size: 1.1rem;
+    line-height: 1.6;
+} 
