@@ -1,0 +1,30 @@
+# azure-pipelines-frontend.yml
+# CI/CD pipeline for React frontend to Azure Static Web Apps
+
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  staticWebAppName: 'edusyncfronend' # Your actual Static Web App name
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '18.x'
+  displayName: 'Install Node.js'
+
+- script: |
+    npm install
+    npm run build
+  displayName: 'Build React App'
+  workingDirectory: '$(System.DefaultWorkingDirectory)' # Path to your React app
+
+- task: AzureStaticWebApp@0
+  inputs:
+    app_location: 'frontend/edusyncfrontend' # Path to your React app
+    output_location: 'build'                  # Build output folder
+    azure_static_web_apps_api_token: $(deployment_token)
+  displayName: 'Deploy to Azure Static Web Apps'
