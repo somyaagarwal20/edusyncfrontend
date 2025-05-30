@@ -20,7 +20,7 @@ steps:
     npm install
     npm run build
   displayName: 'Build React App'
-  workingDirectory: '$(System.DefaultWorkingDirectory)' # Path to your React app
+  workingDirectory: 'frontend/edusyncfrontend' # Path to your React app
 
 - task: AzureStaticWebApp@0
   inputs:
