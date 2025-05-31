@@ -2,7 +2,7 @@
   "name": "edusyncfrontend",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://localhost:7121",
+  "proxy": "https://witty-smoke-07babad00.6.azurestaticapps.net",
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
