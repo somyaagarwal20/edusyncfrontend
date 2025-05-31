@@ -46,10 +46,14 @@ function LoginRegister() {
     }
   };
 
-  const handleLogin = async () => {
+   const handleLogin = async () => {
     try {
       const payload = { email: formData.email, password: formData.password };
-      const response = await axiosInstance.post('/UserModels/login', payload);
+      console.log('Login URL:', (process.env.REACT_APP_API_URL || '') + '/UserModels/login');
+      const response = await axiosInstance.post(
+        (process.env.REACT_APP_API_URL || '') + '/UserModels/login',
+        payload
+      );
       
       // Store complete user data in localStorage
       localStorage.setItem('user', JSON.stringify(response.data));
