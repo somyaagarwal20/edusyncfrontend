@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // ✅ Use relative path so React proxy handles the full backend URL
 const instance = axios.create({
-  baseURL: '/api', // Proxy will send this to https://localhost:7121/api
+  baseURL: process.env.REACT_APP_API_URL || '/api',
   headers: {
     'Content-Type': 'application/json',
   },
