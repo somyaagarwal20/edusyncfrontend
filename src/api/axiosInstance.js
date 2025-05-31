@@ -1,14 +1,14 @@
 import axios from 'axios';
 
-// ✅ Use relative path so React proxy handles the full backend URL
+// Create axios instance with proper base URL configuration
 const instance = axios.create({
-  baseURL: process.env.REACT_APP_API_URL || '/api',
+  baseURL: process.env.REACT_APP_API_URL || 'http://localhost:5000/api',
   headers: {
     'Content-Type': 'application/json',
   },
 });
 
-// ✅ Automatically attach token from localStorage (if exists)
+// Automatically attach token from localStorage (if exists)
 instance.interceptors.request.use((config) => {
   const token = localStorage.getItem('token');
   if (token) {
