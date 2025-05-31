@@ -5,7 +5,7 @@ pool:
   vmImage: 'ubuntu-latest'
 
 variables:
-  staticWebAppName: 'newfrontend'
+  staticWebAppName: 'edusyncnewfrontend'
 
 steps:
 - task: NodeTool@0
@@ -23,5 +23,5 @@ steps:
   inputs:
     app_location: '/'
     output_location: 'build'
-    azure_static_web_apps_api_token: $(newvarfrontent)
+    azure_static_web_apps_api_token: $(frontendvar)
   displayName: 'Deploy to Azure Static Web Apps'
