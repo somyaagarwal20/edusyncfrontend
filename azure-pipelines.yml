@@ -1,0 +1,27 @@
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  staticWebAppName: 'edusyncnewfrontend'
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '18.x'
+  displayName: 'Install Node.js'
+
+- script: |
+    npm install
+    npm run build
+  displayName: 'Build React App'
+  workingDirectory: '$(System.DefaultWorkingDirectory)'
+
+- task: AzureStaticWebApp@0
+  inputs:
+    app_location: '/'
+    output_location: 'build'
+    azure_static_web_apps_api_token: $(frontendvar)
+  displayName: 'Deploy to Azure Static Web Apps'
