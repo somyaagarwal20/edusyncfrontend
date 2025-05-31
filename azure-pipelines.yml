@@ -23,5 +23,5 @@ steps:
   inputs:
     app_location: '/frontend'
     output_location: 'build'
-    azure_static_web_apps_api_token: $(deployment_token)
+    azure_static_web_apps_api_token: $(newvarfrontent)
   displayName: 'Deploy to Azure Static Web Apps'
