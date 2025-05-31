@@ -46,7 +46,7 @@ function LoginRegister() {
     }
   };
 
-  const handleLogin = async () => {
+   const handleLogin = async () => {
     try {
       const payload = { email: formData.email, password: formData.password };
       console.log('Login URL:', (process.env.REACT_APP_API_URL || '') + '/UserModels/login');
