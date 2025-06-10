@@ -12,6 +12,9 @@ function LoginRegister() {
     newPassword: '',
     role: 'Student'
   });
+
+
+  //just check code 
   const [error, setError] = useState('');
   const [message, setMessage] = useState('');
   const [loading, setLoading] = useState(false);
